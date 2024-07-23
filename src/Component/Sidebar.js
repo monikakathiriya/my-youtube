@@ -137,26 +137,22 @@ const sidebarItem = [
     title: "Subscription"
   },
 ]
-
-const Sidebar = () => {
-  const open = useSelector((state) => state.app.open);
-
+const Sidebar = () => { 
+  const open = useSelector((store)=>store.app.open);
+   
   return (
-    <div className={` ml-6 relative left-0 ${open ? "w-[16%]" : "w-[8%]"} p-5 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden`}>
-
-      {
-        sidebarItem.map((item, i) => {
-          return (
-            <div key={i} className='flex my-3 ml-2'>
-              {item.icons}
-              <h4 className={`ml-5 ${open ? " " : 'hidden'}`}>{item.title}</h4>
-            </div>
-          )
-
-        })
-      }
-
-    </div>
+      <div className={`relative left-0 ${open? "w-[20%]" : "w-[6%]"} p-5 h-[calc(100vh-4.625rem)] bg-white overflow-y-scroll overflow-x-hidden`}>
+          {
+              sidebarItem.map((item, index) => {
+                  return (
+                      <div key={index} className='flex my-3 ml-2'>
+                          {item.icons}
+                          <p className={`ml-5 ${open ? "": 'hidden'}`}>{item.title}</p>
+                      </div>
+                  )
+              })
+          }
+      </div>
   )
 }
 

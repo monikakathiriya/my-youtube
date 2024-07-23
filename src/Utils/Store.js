@@ -7,8 +7,9 @@ const reducers = combineReducers({
     app: appReducer,
     chat:ChatReducer
 })
-const Store = configureStore({
 
+
+const Store = configureStore({
     reducer: reducers,
 
 })

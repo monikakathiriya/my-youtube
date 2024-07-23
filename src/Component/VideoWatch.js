@@ -21,7 +21,7 @@ const VideoWatch = () => {
 
   const getSingleVideo = async () => {
     try {
-      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`);
+     const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`);
       setSingleVideo(res?.data?.items[0]);
     } catch (error) {
       console.log(error)
@@ -34,7 +34,7 @@ const VideoWatch = () => {
   }
   useEffect(() => {
     getSingleVideo();
-  }, []);
+  },[]);
 
   return (
     <div className='flex justify-between ml-4 w-[100%] mt-5'>
